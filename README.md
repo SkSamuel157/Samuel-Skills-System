@@ -1,273 +1,355 @@
-# Samuel Skills System
+![Version](https://img.shields.io/badge/version-v1.0.0-blue)
 
-Framework modular para análise, compreensão, planejamento, validação, documentação e evolução de projetos complexos.
+![Status](https://img.shields.io/badge/status-stable-brightgreen)
 
-O **Samuel Skills System (SSS)** é um ecossistema de skills especializadas projetadas para trabalhar de forma integrada, permitindo conduzir projetos técnicos e não técnicos através de um fluxo estruturado, modular e rastreável.
+![Architecture](https://img.shields.io/badge/architecture-modular-orange)
 
-Seu objetivo é preservar contexto, reduzir retrabalho e padronizar a forma como projetos são compreendidos, planejados, executados e documentados.
+![License](https://img.shields.io/badge/license-pending-lightgrey)
+
+
+
+# Samuel Skills System (SSS)
+
+> Framework modular para compreender, planejar, validar, executar e documentar projetos complexos utilizando Skills especializadas.
+
+**Versão Atual:** `v1.0.0 Stable`
+
+---
+
+
+## Índice
+
+- [Visão Geral](#visão-geral)
+- [Objetivos](#objetivos)
+- [Filosofia](#filosofia)
+- [Por que utilizar o Samuel Skills System?](#por-que-utilizar-o-samuel-skills-system)
+- [Arquitetura](#arquitetura-atual)
+- [Core](#core)
+- [Fluxo Operacional](#fluxo-operacional)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Roadmap](#roadmap)
+- [Status](#status)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+
+
+## Visão Geral
+
+O **Samuel Skills System (SSS)** é uma arquitetura modular desenvolvida para organizar o trabalho do ChatGPT em responsabilidades especializadas (Skills).
+
+Ao invés de utilizar um único prompt gigantesco, o sistema divide responsabilidades entre componentes especializados, permitindo maior organização, rastreabilidade, reutilização e evolução contínua.
+
+Cada Skill possui uma responsabilidade única e pode atuar individualmente ou em conjunto, formando um pipeline completo para condução de projetos.
+
+---
+
+## Objetivos
+
+O Samuel Skills System foi desenvolvido para:
+
+- Organizar projetos complexos em responsabilidades especializadas.
+- Preservar contexto durante todo o ciclo de vida do projeto.
+- Reduzir retrabalho através de um fluxo estruturado.
+- Garantir rastreabilidade entre decisões, evidências e documentação.
+- Facilitar a evolução contínua do sistema através de uma arquitetura modular.
 
 ---
 
 # Filosofia
 
-O Samuel Skills System foi construído sobre alguns princípios fundamentais:
+O Samuel Skills System é baseado em alguns princípios fundamentais:
 
-* Compreender antes de executar.
-* Planejar antes de modificar.
-* Validar antes de prosseguir.
-* Documentar durante todo o processo.
-* Preservar contexto continuamente.
-* Favorecer modularização em vez de soluções monolíticas.
-* Garantir rastreabilidade entre todas as etapas.
+- Compreender antes de executar.
+- Planejar antes de modificar.
+- Validar antes de prosseguir.
+- Executar de forma controlada.
+- Preservar contexto.
+- Favorecer modularização.
+- Evitar retrabalho.
+- Garantir rastreabilidade.
 
 ---
 
-# Arquitetura
+# Por que utilizar o Samuel Skills System?
 
-O sistema é dividido em um **Core** e futuras **Extensions**.
+Modelos de IA costumam concentrar toda a lógica em um único prompt.
 
-```text
-Samuel Skills System
+O Samuel Skills System propõe uma abordagem diferente: dividir responsabilidades entre Skills especializadas, cada uma responsável por uma etapa específica do fluxo operacional.
 
-Core
-│
-├── samuel-standards
-├── modo-foco
-├── project-analyzer
-├── dependency-validator
-├── evidence-manager
-├── technical-report
-└── skill-creator
+Essa arquitetura proporciona:
 
-Extensions (Roadmap)
-│
-├── presentation-builder
-├── defense-prep
-├── research-analyzer
-├── environment-builder
-├── pentest-report
-└── ...
+- maior organização;
+- maior reutilização;
+- melhor manutenção;
+- rastreabilidade das decisões;
+- evolução incremental do sistema.
+
+---
+
+## Arquitetura Atual
+
+(diagrama atual)
+
+---
+
+## Arquitetura Planejada (v1.1)
+
+```mermaid
+flowchart TD
+
+    SS[Samuel Standards]
+
+    CE[Core Engine]
+
+    R[ROUTER]
+
+    SS --> CE
+
+    CE --> R
+
+    R --> MF[Modo Foco]
+
+    R --> PA[Project Analyzer]
+
+    R --> DV[Dependency Validator]
+
+    R --> EM[Evidence Manager]
+
+    R --> TR[Technical Report]
+
+    R --> SC[Skill Creator]
 ```
+O **Samuel Standards** define os padrões globais.
+
+O **ROUTER** determina qual Skill deve ser utilizada.
+
+As demais Skills executam responsabilidades específicas.
 
 ---
 
-# Samuel Core
+# Core
 
-O Core representa a fundação operacional do ecossistema.
+O Core representa o núcleo operacional do sistema.
 
-Cada skill possui uma responsabilidade única e todas seguem os princípios definidos em **Samuel Standards**.
+Atualmente é composto por:
 
-## Samuel Standards
-
-Base comportamental de todo o sistema.
-
-Responsável por definir:
-
-* Princípios globais.
-* Tratamento de informações.
-* Continuidade.
-* Transparência.
-* Rastreabilidade.
-* Proporcionalidade.
-* Integração entre skills.
-
----
-
-## Modo Foco
-
-Orquestrador do Samuel Core.
-
-Responsável por conduzir projetos através das fases de:
-
-```text
-Absorção
-↓
-Interpretação
-↓
-Mapeamento
-↓
-Planejamento
-↓
-Execução
-```
-
-Principais responsabilidades:
-
-* Preservar contexto.
-* Organizar o fluxo.
-* Controlar o estado do projeto.
-* Coordenar a utilização das demais skills.
-
----
-
-## Project Analyzer
-
-Especialista em compreender projetos já existentes.
-
-Responsável por:
-
-* Reconstruir contexto.
-* Explicar ambientes.
-* Identificar responsabilidades.
-* Localizar riscos.
-* Sugerir melhorias.
-* Construir roadmaps.
-
-Perguntas que responde:
-
-* O que é isso?
-* Onde estamos?
-* O que já foi feito?
-* O que falta?
-* O que pode melhorar?
-* Qual é o próximo passo?
-
----
-
-## Dependency Validator
-
-Especialista em validar prontidão operacional.
-
-Responsável por verificar:
-
-* Ferramentas.
-* Frameworks.
-* Bibliotecas.
-* Ambientes.
-* Infraestrutura.
-* Documentação.
-* Recursos necessários.
-
-Seu objetivo é garantir que o projeto esteja pronto para continuar.
-
----
-
-## Evidence Manager
-
-Especialista na gestão de evidências.
-
-Responsável por:
-
-* Planejar evidências.
-* Detectar lacunas.
-* Catalogar capturas.
-* Organizar figuras.
-* Eliminar redundâncias.
-* Preparar o material para documentação.
-
----
-
-## Technical Report
-
-Especialista na produção de documentação técnica profissional.
-
-Responsável por:
-
-* Estruturar relatórios.
-* Redigir documentação.
-* Vincular evidências.
-* Validar rastreabilidade.
-* Produzir documentação pronta para entrega.
-
----
-
-## Skill Creator
-
-Especialista na evolução do ecossistema.
-
-Responsável por:
-
-* Criar novas skills.
-* Projetar arquiteturas.
-* Evitar redundâncias.
-* Validar integrações.
-* Evoluir continuamente o Samuel Skills System.
+| Skill | Responsabilidade |
+|--------|------------------|
+| [`Modo Foco`](core/modo-foco.md) | Condução estruturada de projetos |
+| [`Project Analyzer`](core/project-analyzer.md) | Reconstrução de contexto |
+| [`Dependency Validator`](core/dependency-validator.md) | Validação de dependências |
+| [`Evidence Manager`](core/evidence-manager.md) | Gestão de evidências |
+| [`Technical Report`](core/technical-report.md) | Geração de documentação |
+| [`Skill Creator`](core/skill-creator.md) | Criação de novas Skills |
 
 ---
 
 # Fluxo Operacional
 
-Na maioria dos projetos o fluxo recomendado é:
+## Projeto desconhecido
 
-```text
-Modo Foco
+```
+Projeto
+
 ↓
+
 Project Analyzer
+
 ↓
+
+Modo Foco
+
+↓
+
 Dependency Validator
+
 ↓
+
+Implementação
+
+↓
+
 Evidence Manager
+
 ↓
+
 Technical Report
 ```
 
-Nem todas as skills precisam ser utilizadas.
+---
 
-O fluxo é adaptado conforme a complexidade do projeto.
+## Projeto novo
+
+```
+Ideia
+
+↓
+
+Modo Foco
+
+↓
+
+Dependency Validator
+
+↓
+
+Implementação
+
+↓
+
+Evidence Manager
+
+↓
+
+Technical Report
+```
+
+---
+
+## Nova Skill
+
+```
+Necessidade
+
+↓
+
+Skill Creator
+
+↓
+
+Samuel Standards
+
+↓
+
+Integração ao Core
+
+↓
+
+Validação
+
+↓
+
+Nova Skill
+```
 
 ---
 
 # Estrutura do Projeto
 
-```text
+```
 Samuel Skills System
 │
+├── core/
+│   ├── samuel-standards.md
+│   ├── modo-foco.md
+│   ├── project-analyzer.md
+│   ├── dependency-validator.md
+│   ├── evidence-manager.md
+│   ├── technical-report.md
+│   └── skill-creator.md
+│
+├── extensions/
+│
 ├── README.md
-│
-├── samuel-standards/
-│   └── SKILL.md
-│
-├── modo-foco/
-│   └── SKILL.md
-│
-├── project-analyzer/
-│   └── SKILL.md
-│
-├── dependency-validator/
-│   └── SKILL.md
-│
-├── evidence-manager/
-│   └── SKILL.md
-│
-├── technical-report/
-│   └── SKILL.md
-│
-└── skill-creator/
-    └── SKILL.md
+├── ROUTER.md
+├── CHANGELOG.md
+├── SYSTEM_INSTRUCTIONS.md
+└── SYSTEM_PROMPT.md
 ```
 
 ---
 
 # Roadmap
 
-## Core
+## v1.0 ✅ Stable
 
-* ✅ Samuel Standards
-* ✅ Modo Foco
-* ✅ Project Analyzer
-* ✅ Dependency Validator
-* ✅ Evidence Manager
-* ✅ Technical Report
-* ✅ Skill Creator
+- Samuel Standards
+- ROUTER
+- Core
+- GPT Integration
+- Homologação Completa
 
 ---
 
-## Extensions
+## v1.1 🚧
 
-Próximas skills planejadas:
-
-* Presentation Builder
-* Defense Prep
-* Research Analyzer
-* Environment Builder
-* Pentest Report
-* OT Security
-* Documentation Reviewer
-* Diagram Builder
-* AI Workflow Designer
+- Core Engine
+- Estado Global
+- Transições entre Skills
+- Histórico de Execução
+- Melhorias de Rastreabilidade
 
 ---
 
-# Objetivo Final
+## Futuro
 
-O Samuel Skills System tem como objetivo construir um ecossistema modular de skills capazes de compreender, analisar, validar, planejar, executar, documentar e evoluir projetos de qualquer complexidade, preservando contexto, garantindo rastreabilidade e reduzindo retrabalho durante todo o ciclo operacional.
+- Presentation Builder
+- Defense Assistant
+- Research Analyzer
+- Environment Builder
+- Architecture Designer
+- Workflow Engine
+
+---
+
+# Status
+
+| Item | Status |
+|-------|--------|
+| Arquitetura | ✅ |
+| Core | ✅ |
+| GPT | ✅ |
+| Testes | ✅ |
+| Stable | ✅ |
+
+---
+
+# Contribuição
+
+Toda evolução do sistema deve seguir:
+
+Samuel Standards
+
+↓
+
+Issue
+
+↓
+
+Discussion
+
+↓
+
+Milestone
+
+↓
+
+Implementação
+
+↓
+
+Testes
+
+↓
+
+Pull Request
+
+↓
+
+Release
+
+---
+
+# Licença
+
+Ainda não definida.
+
+O projeto encontra-se em desenvolvimento ativo.
+
+---
+
+# Autor
+
+**Samuel Skills System**
+
+Framework desenvolvido por **Samuel** para construção de assistentes especializados baseados em arquitetura modular e rastreabilidade operacional.
