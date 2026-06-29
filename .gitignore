@@ -1,0 +1,17 @@
+# Sistema Operacional
+
+.DS_Store
+Thumbs.db
+
+# VS Code
+
+.vscode/
+
+# Python
+
+**pycache**/
+*.pyc
+
+# Logs
+
+*.log
