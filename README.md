@@ -12,8 +12,9 @@
 
 > Framework modular para compreender, planejar, validar, executar e documentar projetos complexos utilizando Skills especializadas.
 
-**Versão Atual:** `v1.0.0 Stable`
+**Versão Estável:** `v1.0.0`
 
+**Próxima Versão:** `v1.1.0 (em desenvolvimento)`
 ---
 
 
@@ -88,12 +89,6 @@ Essa arquitetura proporciona:
 
 ## Arquitetura Atual
 
-(diagrama atual)
-
----
-
-## Arquitetura Planejada (v1.1)
-
 ```mermaid
 flowchart TD
 
@@ -103,33 +98,24 @@ flowchart TD
 
     R[ROUTER]
 
+    SC[Skill Contracts]
+
+    SK[Skills]
+
     SS --> CE
 
     CE --> R
 
-    R --> MF[Modo Foco]
+    R --> SC
 
-    R --> PA[Project Analyzer]
-
-    R --> DV[Dependency Validator]
-
-    R --> EM[Evidence Manager]
-
-    R --> TR[Technical Report]
-
-    R --> SC[Skill Creator]
+    SC --> SK
 ```
-O **Samuel Standards** define os padrões globais.
-
-O **ROUTER** determina qual Skill deve ser utilizada.
-
-As demais Skills executam responsabilidades específicas.
-
----
 
 # Core
 
-O Core representa o núcleo operacional do sistema.
+O Core Engine foi introduzido na versão v1.1 para centralizar a orquestração operacional do Samuel Skills System.
+
+Ele atua entre os padrões globais (Samuel Standards), o ROUTER e as Skills, sendo responsável por coordenar o fluxo operacional sem executar atividades especializadas.
 
 Atualmente é composto por:
 
@@ -240,6 +226,16 @@ Nova Skill
 Samuel Skills System
 │
 ├── core/
+│   ├── core-engine/
+│   │   ├── README.md
+│   │   ├── state-manager.md
+│   │   ├── pipeline-builder.md
+│   │   ├── operational-status.md
+│   │   ├── transition-manager.md
+│   │   ├── continuity-manager.md
+│   │   ├── consistency-validator.md
+│   │   └── history-manager.md
+│   │
 │   ├── samuel-standards.md
 │   ├── modo-foco.md
 │   ├── project-analyzer.md
@@ -250,12 +246,17 @@ Samuel Skills System
 │
 ├── extensions/
 │
+├── .gitignore
+├── CHANGELOG.md
 ├── README.md
 ├── ROUTER.md
-├── CHANGELOG.md
 ├── SYSTEM_INSTRUCTIONS.md
 └── SYSTEM_PROMPT.md
 ```
+
+---
+
+# Roadmap
 
 ---
 
@@ -271,13 +272,15 @@ Samuel Skills System
 
 ---
 
-## v1.1 🚧
+## v1.1 🚧 Em desenvolvimento
 
-- Core Engine
-- Estado Global
-- Transições entre Skills
-- Histórico de Execução
-- Melhorias de Rastreabilidade
+### FEATURE-001 — Core Engine
+
+**Status**
+
+- ✅ Arquitetura
+- ✅ Documentação
+- ⏳ Integração ao Samuel AI
 
 ---
 
@@ -298,6 +301,7 @@ Samuel Skills System
 |-------|--------|
 | Arquitetura | ✅ |
 | Core | ✅ |
+| Core Engine | 🚧 |
 | GPT | ✅ |
 | Testes | ✅ |
 | Stable | ✅ |

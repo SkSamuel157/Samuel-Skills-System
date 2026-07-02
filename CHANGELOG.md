@@ -1,12 +1,52 @@
-# CHANGELOG
+# Changelog
 
-Todas as mudanças relevantes do Samuel Skills System devem ser registradas neste documento.
+Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
 
-Este histórico tem como objetivo documentar a evolução da arquitetura, das skills, das correções e das funcionalidades adicionadas ao sistema.
+O formato segue o princípio de versionamento incremental do Samuel Skills System.
 
 ---
 
-# v1.0.0 — Stable
+# [v1.1.0] - Em desenvolvimento
+
+## Added
+
+### FEATURE-001 — Core Engine
+
+Implementação da arquitetura do Core Engine responsável pela orquestração operacional do Samuel Skills System.
+
+#### Novos módulos
+
+- State Manager
+- Pipeline Builder
+- Operational Status
+- Transition Manager
+- Continuity Manager
+- Consistency Validator
+- History Manager
+
+#### Melhorias
+
+- Introdução do conceito de Estado Global.
+- Construção dinâmica de pipelines.
+- Gerenciamento explícito das transições entre Skills.
+- Separação entre estado interno e comunicação com o usuário.
+- Continuidade estruturada dos fluxos.
+- Validação formal de consistência.
+- Registro estruturado do histórico operacional.
+
+#### Bugs corrigidos
+
+BUG-001
+
+- Implementado o Transition Manager para controlar formalmente as transições entre Skills.
+
+BUG-002
+
+- Implementado o Consistency Validator para impedir conciliação automática de informações conflitantes.
+
+---
+
+# [v1.0.0] - Stable
 
 **Data:** 24/06/2026
 
