@@ -15,8 +15,8 @@
 **Versão Estável:** `v1.0.0`
 
 **Próxima Versão:** `v1.1.0 (em desenvolvimento)`
----
 
+---
 
 ## Índice
 
@@ -92,6 +92,10 @@ Essa arquitetura proporciona:
 ```mermaid
 flowchart TD
 
+    U[Usuário]
+
+    IW[Interaction Workflow]
+
     SS[Samuel Standards]
 
     CE[Core Engine]
@@ -101,6 +105,10 @@ flowchart TD
     SC[Skill Contracts]
 
     SK[Skills]
+
+    U --> IW
+
+    IW --> CE
 
     SS --> CE
 
@@ -119,14 +127,16 @@ Ele atua entre os padrões globais (Samuel Standards), o ROUTER e as Skills, sen
 
 Atualmente é composto por:
 
-| Skill | Responsabilidade |
+| Componente | Responsabilidade |
 |--------|------------------|
-| [`Modo Foco`](core/modo-foco.md) | Condução estruturada de projetos |
-| [`Project Analyzer`](core/project-analyzer.md) | Reconstrução de contexto |
-| [`Dependency Validator`](core/dependency-validator.md) | Validação de dependências |
-| [`Evidence Manager`](core/evidence-manager.md) | Gestão de evidências |
-| [`Technical Report`](core/technical-report.md) | Geração de documentação |
-| [`Skill Creator`](core/skill-creator.md) | Criação de novas Skills |
+| Core Engine | Orquestração operacional, estado global e controle de fluxo |
+| Interaction Workflow | Controle da experiência de interação e comunicação |
+| Modo Foco | Condução estruturada de projetos |
+| Project Analyzer | Reconstrução de contexto |
+| Dependency Validator | Validação de dependências |
+| Evidence Manager | Gestão de evidências |
+| Technical Report | Geração de documentação |
+| Skill Creator | Criação de novas Skills |
 
 ---
 
@@ -236,6 +246,14 @@ Samuel Skills System
 │   │   ├── consistency-validator.md
 │   │   └── history-manager.md
 │   │
+│   ├── interaction-workflow/
+│   │   ├── README.md
+│   │   ├── phase-controller.md
+│   │   ├── execution-flow-controller.md
+│   │   ├── response-optimizer.md
+│   │   ├── communication-adapter.md
+│   │   └── context-boundary-controller.md
+│   │
 │   ├── samuel-standards.md
 │   ├── modo-foco.md
 │   ├── project-analyzer.md
@@ -253,10 +271,6 @@ Samuel Skills System
 ├── SYSTEM_INSTRUCTIONS.md
 └── SYSTEM_PROMPT.md
 ```
-
----
-
-# Roadmap
 
 ---
 
@@ -280,9 +294,19 @@ Samuel Skills System
 
 - ✅ Arquitetura
 - ✅ Documentação
-- ⏳ Integração ao Samuel AI
+- ✅ Implementação
+- ✅ Homologação
 
 ---
+
+### FEATURE-002 — Interaction Workflow
+
+**Status**
+
+- ✅ Arquitetura
+- ✅ Componentes
+- ✅ Documentação
+- ⏳ Homologação
 
 ## Futuro
 
@@ -301,9 +325,10 @@ Samuel Skills System
 |-------|--------|
 | Arquitetura | ✅ |
 | Core | ✅ |
-| Core Engine | 🚧 |
+| Core Engine | ✅ |
+| Interaction Workflow | 🚧 |
 | GPT | ✅ |
-| Testes | ✅ |
+| Testes | 🚧 |
 | Stable | ✅ |
 
 ---
